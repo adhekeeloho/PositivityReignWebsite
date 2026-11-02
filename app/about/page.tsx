@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/reveal";
 import ContactCta from "@/components/contact-cta";
 
 const values = [
@@ -29,12 +30,13 @@ export default function AboutPage() {
       <main>
         <section className="relative overflow-hidden bg-[#f1f6ed]">
           <div className="soft-grid absolute inset-0 opacity-40" />
+          <div className="float-slow pointer-events-none absolute -right-16 top-10 h-72 w-72 rounded-full bg-brand-green/20 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
-            <span className="eyebrow">About PositivityReign</span>
-            <h1 className="display-heading mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
+            <span className="eyebrow fade-up">About PositivityReign</span>
+            <h1 className="display-heading fade-up mt-6 [animation-delay:120ms] max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
               Care that sees the whole person.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#587078]">
+            <p className="fade-up mt-7 max-w-2xl text-lg leading-8 text-[#587078] [animation-delay:240ms]">
               PositivityReign Consult is a Lagos-based practice bringing
               together mental health support, consulting, training, and
               practical workplace wellbeing.
@@ -43,7 +45,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mx-auto grid max-w-7xl gap-14 px-6 py-20 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-14 lg:py-28">
-          <div className="relative mx-auto w-full max-w-[480px]">
+          <Reveal direction="left"><div className="relative mx-auto w-full max-w-[480px]">
             <div className="absolute -left-5 -top-5 h-28 w-28 rounded-full bg-brand-green/30" />
             <div className="relative overflow-hidden rounded-[2rem] border border-[#e0e9e2] bg-white p-3 shadow-[0_25px_70px_rgba(24,58,67,0.08)]">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem]">
@@ -62,9 +64,9 @@ export default function AboutPage() {
                 Transforming Lives, Elevating Societies
               </p>
             </div>
-          </div>
+          </div></Reveal>
 
-          <div className="pt-4 lg:pl-8">
+          <Reveal className="pt-4 lg:pl-8" delay={120} direction="right">
             <span className="eyebrow">Our purpose</span>
             <h2 className="display-heading mt-5 text-4xl sm:text-5xl">
               Helping people and organizations move forward with care.
@@ -86,22 +88,22 @@ export default function AboutPage() {
             >
               Explore our services <span aria-hidden="true">↗</span>
             </Link>
-          </div>
+          </Reveal>
         </section>
 
         <section className="bg-white">
           <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-14 lg:py-24">
-            <div className="max-w-2xl">
+            <Reveal className="max-w-2xl">
               <span className="eyebrow">What guides us</span>
               <h2 className="display-heading mt-5 text-4xl sm:text-5xl">
                 A human approach, grounded in possibility.
               </h2>
-            </div>
+            </Reveal>
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {values.map((value, index) => (
+                <Reveal className="h-full" delay={index * 120} key={value.title}>
                 <article
-                  className="rounded-[1.5rem] border border-[#e4ebe5] bg-[#fbfcfa] p-7"
-                  key={value.title}
+                  className="service-card h-full rounded-[1.5rem] border border-[#e4ebe5] bg-[#fbfcfa] p-7"
                 >
                   <span className="font-serif text-lg text-brand-blue">
                     0{index + 1}
@@ -111,13 +113,14 @@ export default function AboutPage() {
                     {value.copy}
                   </p>
                 </article>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-14 lg:py-24">
-          <div className="grid gap-10 rounded-[2rem] bg-[#183a43] p-8 text-white sm:p-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+          <Reveal><div className="grid gap-10 rounded-[2rem] bg-[#183a43] p-8 text-white sm:p-12 lg:grid-cols-[1fr_0.8fr] lg:items-center">
             <div>
               <span className="eyebrow !text-[#b8d68b]">Our leadership</span>
               <h2 className="display-heading mt-5 text-4xl sm:text-5xl">
@@ -136,7 +139,7 @@ export default function AboutPage() {
                 step feel possible.
               </p>
             </div>
-          </div>
+          </div></Reveal>
         </section>
 
         <ContactCta

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/reveal";
 import SocialIcon, { type SocialPlatform } from "@/components/social-icon";
 import { contact } from "@/lib/site-data";
 
@@ -27,12 +28,13 @@ export default function ContactPage() {
       <main>
         <section className="relative overflow-hidden bg-[#f1f6ed]">
           <div className="soft-grid absolute inset-0 opacity-40" />
+          <div className="float-slow pointer-events-none absolute -right-16 top-10 h-72 w-72 rounded-full bg-brand-green/20 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-14 lg:py-28">
-            <span className="eyebrow">Get in touch</span>
-            <h1 className="display-heading mt-6 max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
+            <span className="eyebrow fade-up">Get in touch</span>
+            <h1 className="display-heading fade-up mt-6 [animation-delay:120ms] max-w-4xl text-5xl sm:text-6xl lg:text-7xl">
               Your next step can start here.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#587078]">
+            <p className="fade-up mt-7 max-w-2xl text-lg leading-8 text-[#587078] [animation-delay:240ms]">
               Reach out by phone or email. Whether you are looking for
               individual support or exploring services for your organization,
               we would be glad to hear from you.
@@ -41,7 +43,7 @@ export default function ContactPage() {
         </section>
 
         <section className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-10 lg:grid-cols-[1fr_0.85fr] lg:px-14 lg:py-24">
-          <div className="grid gap-4 sm:grid-cols-2">
+          <Reveal direction="left"><div className="grid gap-4 sm:grid-cols-2">
             <a
               className="service-card group rounded-[1.6rem] border border-[#e1e9e3] bg-white p-7"
               href="tel:+2348096950650"
@@ -145,9 +147,9 @@ export default function ContactPage() {
                 Get in touch to discuss the right way to connect.
               </p>
             </div>
-          </div>
+          </div></Reveal>
 
-          <aside className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#183a43] p-8 text-white sm:p-10">
+          <Reveal delay={150} direction="right"><aside className="relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#183a43] p-8 text-white sm:p-10">
             <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-white/10" />
             <div className="absolute -right-4 -top-4 h-40 w-40 rounded-full border border-brand-green/40" />
             <div className="relative">
@@ -182,11 +184,11 @@ export default function ContactPage() {
                 ))}
               </ul>
             </div>
-          </aside>
+          </aside></Reveal>
         </section>
 
         <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-10 lg:px-14 lg:pb-24">
-          <div className="rounded-[1.75rem] border border-[#e3ebe5] bg-white px-7 py-8 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:px-10">
+          <Reveal><div className="rounded-[1.75rem] border border-[#e3ebe5] bg-white px-7 py-8 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:px-10">
             <div>
               <h2 className="font-serif text-2xl text-[#183a43]">
                 Not sure what to ask?
@@ -202,7 +204,7 @@ export default function ContactPage() {
             >
               Email PositivityReign
             </Link>
-          </div>
+          </div></Reveal>
         </section>
       </main>
     </div>

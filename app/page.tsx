@@ -51,11 +51,11 @@ export default function Home() {
                   </svg>
                 </span>
               </h1>
-              <p className="mt-7 max-w-xl text-lg leading-8 text-[#587078] sm:text-xl sm:leading-9">
+              <p className="fade-up mt-7 max-w-xl text-lg leading-8 text-[#587078] [animation-delay:240ms] sm:text-xl sm:leading-9">
                 Thoughtful mental health support and practical guidance for
                 individuals, teams, and communities.
               </p>
-              <p className="mt-4 max-w-lg text-sm leading-7 text-[#587078]">
+              <p className="fade-up mt-4 max-w-lg text-sm leading-7 text-[#587078] [animation-delay:340ms]">
                 PositivityReign Consult helps people find clarity, strengthen
                 wellbeing, and move forward with confidence.
               </p>
@@ -144,17 +144,19 @@ export default function Home() {
 
         <section className="mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-14 lg:py-32">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
+            <Reveal direction="left">
               <span className="eyebrow">A thoughtful place to begin</span>
               <h2 className="display-heading mt-5 max-w-xl text-4xl sm:text-5xl">
                 Wellbeing is not one-size-fits-all.
               </h2>
-            </div>
-            <p className="max-w-2xl text-base leading-8 text-[#587078] lg:justify-self-end lg:text-lg">
+            </Reveal>
+            <Reveal className="lg:justify-self-end" delay={120} direction="right">
+            <p className="max-w-2xl text-base leading-8 text-[#587078] lg:text-lg">
               Life can ask a lot of us. Whether you are seeking support for
               yourself or looking to create a healthier workplace, we bring
               care, perspective, and practical next steps to the conversation.
             </p>
+            </Reveal>
           </div>
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -206,7 +208,7 @@ export default function Home() {
         <section className="relative overflow-hidden bg-[#eaf2e4]">
           <div className="soft-grid absolute inset-0 opacity-50" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 sm:px-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-14 lg:py-28">
-            <div>
+            <Reveal direction="left">
               <span className="eyebrow">Our approach</span>
               <h2 className="display-heading mt-5 max-w-md text-4xl sm:text-5xl">
                 Progress can begin with one honest conversation.
@@ -221,12 +223,12 @@ export default function Home() {
               >
                 Get to know us <span aria-hidden="true">↗</span>
               </Link>
-            </div>
+            </Reveal>
             <div className="grid gap-3">
-              {principles.map((principle) => (
+              {principles.map((principle, index) => (
+                <Reveal delay={index * 120} direction="right" key={principle.number}>
                 <article
-                  className="grid gap-4 rounded-2xl border border-white/80 bg-white/75 p-5 sm:grid-cols-[54px_1fr] sm:p-6"
-                  key={principle.number}
+                  className="service-card grid gap-4 rounded-2xl border border-white/80 bg-white/75 p-5 sm:grid-cols-[54px_1fr] sm:p-6"
                 >
                   <span className="font-serif text-xl text-brand-blue">
                     {principle.number}
@@ -240,6 +242,7 @@ export default function Home() {
                     </p>
                   </div>
                 </article>
+                </Reveal>
               ))}
             </div>
           </div>
