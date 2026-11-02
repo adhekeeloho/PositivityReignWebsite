@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ContactCta from "@/components/contact-cta";
 import { services } from "@/lib/site-data";
@@ -30,10 +31,20 @@ export default function ServicesPage() {
           <div className="grid gap-5 md:grid-cols-2">
             {services.map((service, index) => (
               <article
-                className="service-card flex flex-col rounded-[1.7rem] border border-[#e1e9e3] bg-white p-7 sm:p-9"
+                className="service-card flex flex-col overflow-hidden rounded-[1.7rem] border border-[#e1e9e3] bg-white"
                 id={service.id}
                 key={service.title}
               >
+                <div className="relative h-56 w-full">
+                  <Image
+                    alt={service.imageAlt}
+                    className={`object-cover ${service.imagePosition}`}
+                    fill
+                    sizes="(min-width: 1024px) 560px, (min-width: 768px) 50vw, 100vw"
+                    src={service.image}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7 sm:p-9">
                 <div className="flex items-start justify-between gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#edf4e5] font-serif text-xl text-[#397348]">
                     0{index + 1}
@@ -57,6 +68,7 @@ export default function ServicesPage() {
                 >
                   Ask us about this service <span aria-hidden="true">↗</span>
                 </Link>
+                </div>
               </article>
             ))}
           </div>

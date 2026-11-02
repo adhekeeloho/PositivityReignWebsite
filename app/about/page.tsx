@@ -45,14 +45,16 @@ export default function AboutPage() {
         <section className="mx-auto grid max-w-7xl gap-14 px-6 py-20 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-14 lg:py-28">
           <div className="relative mx-auto w-full max-w-[480px]">
             <div className="absolute -left-5 -top-5 h-28 w-28 rounded-full bg-brand-green/30" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-[#e0e9e2] bg-white p-4 shadow-[0_25px_70px_rgba(24,58,67,0.08)]">
-              <Image
-                alt="PositivityReign Consult logo"
-                className="h-auto w-full rounded-[1.4rem]"
-                height={768}
-                src="/positivityreign-logo.jpg"
-                width={768}
-              />
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#e0e9e2] bg-white p-3 shadow-[0_25px_70px_rgba(24,58,67,0.08)]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem]">
+                <Image
+                  alt="A therapist and a client in a calm, plant-filled room talking together"
+                  className="object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  src="/images/about-session.jpg"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-5 right-4 rounded-2xl bg-brand-blue px-5 py-4 text-white shadow-lg sm:right-0">
               <p className="font-serif text-xl">Lagos, Nigeria</p>

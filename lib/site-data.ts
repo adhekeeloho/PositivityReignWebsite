@@ -15,6 +15,9 @@ export const contact = {
 export const services = [
   {
     id: "consulting",
+    image: "/images/service-consulting.jpg",
+    imageAlt: "Three colleagues reviewing a laptop together",
+    imagePosition: "object-center",
     title: "Consulting",
     audience: "People & organizations",
     summary: "Thoughtful guidance for personal and organizational challenges.",
@@ -25,6 +28,9 @@ export const services = [
   },
   {
     id: "mental-health-therapy",
+    image: "/images/service-therapy.jpg",
+    imageAlt: "A therapist taking notes while speaking with a client on a sofa",
+    imagePosition: "object-[50%_40%]",
     title: "Mental Health Therapy",
     audience: "Individuals",
     summary: "Supportive mental health care, shaped around you.",
@@ -35,6 +41,9 @@ export const services = [
   },
   {
     id: "training",
+    image: "/images/service-training.jpg",
+    imageAlt: "A facilitator leading a workshop at a flipchart",
+    imagePosition: "object-center",
     title: "Training",
     audience: "Teams & organizations",
     summary: "Learning experiences that support healthier teams and communities.",
@@ -45,6 +54,9 @@ export const services = [
   },
   {
     id: "employee-assistance",
+    image: "/images/service-eap.jpg",
+    imageAlt: "Two colleagues sharing a relaxed laugh over coffee",
+    imagePosition: "object-[50%_30%]",
     title: "Employee Assistance Program (EAP)",
     audience: "Workplaces",
     summary: "Wellbeing support for employees and the organizations around them.",
@@ -55,6 +67,9 @@ export const services = [
   },
   {
     id: "project-management",
+    image: "/images/service-project.jpg",
+    imageAlt: "Someone planning in a notebook at a tidy desk",
+    imagePosition: "object-center",
     title: "Project Management",
     audience: "Projects & organizations",
     summary: "Structured support to help projects move from planning to delivery.",

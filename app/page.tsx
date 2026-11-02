@@ -105,13 +105,14 @@ export default function Home() {
               <div className="absolute right-[5%] top-[13%] h-16 w-16 rounded-full bg-brand-green/80 blur-[1px]" />
               <div className="absolute bottom-[13%] left-[5%] h-24 w-24 rounded-full bg-brand-blue/10" />
               <div className="absolute left-[13%] top-[21%] h-3 w-3 rounded-full bg-brand-blue" />
-              <div className="hero-logo-card relative z-10 w-[72%] overflow-hidden rounded-[2rem] border border-white bg-white p-2 sm:p-3">
+              <div className="hero-logo-card relative z-10 aspect-[4/5] w-[66%] overflow-hidden rounded-[2rem] border-4 border-white bg-white">
                 <Image
-                  alt="PositivityReign Consult logo and the tagline Transforming Lives, Elevating Societies"
-                  className="h-auto w-full rounded-[1.5rem]"
-                  height={768}
-                  src="/positivityreign-logo.jpg"
-                  width={768}
+                  alt="A calm woman with her eyes closed, breathing in a bright, peaceful room"
+                  className="object-cover object-[30%_40%]"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 350px, 70vw"
+                  src="/images/hero-calm.jpg"
                 />
               </div>
               <div className="absolute bottom-[12%] right-[4%] z-20 max-w-[205px] rounded-2xl border border-white/80 bg-white/90 p-4 shadow-[0_15px_36px_rgba(23,75,82,0.1)] backdrop-blur">
@@ -158,10 +159,20 @@ export default function Home() {
           <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service, index) => (
               <Link
-                className="service-card group flex min-h-[245px] flex-col rounded-[1.6rem] border border-[#e1e9e3] bg-white p-7"
+                className="service-card group flex min-h-[245px] flex-col overflow-hidden rounded-[1.6rem] border border-[#e1e9e3] bg-white"
                 href={`/services#${service.id}`}
                 key={service.title}
               >
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    alt={service.imageAlt}
+                    className={`object-cover transition-transform duration-500 group-hover:scale-105 ${service.imagePosition}`}
+                    fill
+                    sizes="(min-width: 1280px) 380px, (min-width: 768px) 50vw, 100vw"
+                    src={service.image}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
                 <div className="flex items-center justify-between">
                   <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#edf4e5] font-serif text-lg text-[#397348]">
                     {String(index + 1).padStart(2, "0")}
@@ -176,6 +187,7 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-7 text-[#647b80]">
                   {service.summary}
                 </p>
+                </div>
               </Link>
             ))}
           </div>
