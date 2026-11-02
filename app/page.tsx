@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "@/components/reveal";
 import ContactCta from "@/components/contact-cta";
 import { services } from "@/lib/site-data";
 
@@ -30,8 +31,8 @@ export default function Home() {
           <div className="pointer-events-none absolute -bottom-48 -left-36 -z-10 h-[30rem] w-[30rem] rounded-full bg-[#e0f0f3] opacity-65 blur-3xl" />
           <div className="mx-auto grid min-h-[660px] max-w-7xl items-center gap-8 px-6 pb-20 pt-16 sm:px-10 lg:grid-cols-[1.03fr_0.97fr] lg:gap-10 lg:px-14 lg:pb-24 lg:pt-20">
             <div className="relative z-10 max-w-2xl">
-              <span className="eyebrow">Mental health · Wellbeing · Growth</span>
-              <h1 className="display-heading mt-7 text-[3.55rem] text-[#183a43] sm:text-6xl lg:text-[4.5rem]">
+              <span className="eyebrow fade-up">Mental health · Wellbeing · Growth</span>
+              <h1 className="display-heading fade-up mt-7 text-[3.55rem] [animation-delay:120ms] text-[#183a43] sm:text-6xl lg:text-[4.5rem]">
                 Make space for a life that feels{" "}
                 <span className="relative whitespace-nowrap text-brand-blue">
                   more like you.
@@ -100,12 +101,12 @@ export default function Home() {
             </div>
 
             <div className="relative mx-auto flex aspect-square w-full max-w-[530px] items-center justify-center">
-              <div className="hero-orbit" />
+              <div className="hero-orbit float-slow" />
               <div className="hero-glow" />
-              <div className="absolute right-[5%] top-[13%] h-16 w-16 rounded-full bg-brand-green/80 blur-[1px]" />
-              <div className="absolute bottom-[13%] left-[5%] h-24 w-24 rounded-full bg-brand-blue/10" />
+              <div className="float-slow absolute right-[5%] top-[13%] h-16 w-16 rounded-full bg-brand-green/80 blur-[1px]" />
+              <div className="float-slow absolute bottom-[13%] left-[5%] [animation-delay:-4s] h-24 w-24 rounded-full bg-brand-blue/10" />
               <div className="absolute left-[13%] top-[21%] h-3 w-3 rounded-full bg-brand-blue" />
-              <div className="hero-logo-card relative z-10 aspect-[4/5] w-[66%] overflow-hidden rounded-[2rem] border-4 border-white bg-white">
+              <div className="hero-logo-card fade-up relative [animation-delay:200ms] z-10 aspect-[4/5] w-[66%] overflow-hidden rounded-[2rem] border-4 border-white bg-white">
                 <Image
                   alt="A calm woman with her eyes closed, breathing in a bright, peaceful room"
                   className="object-cover object-[30%_40%]"
@@ -158,10 +159,10 @@ export default function Home() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service, index) => (
+              <Reveal className="h-full" delay={(index % 3) * 110} key={service.title}>
               <Link
-                className="service-card group flex min-h-[245px] flex-col overflow-hidden rounded-[1.6rem] border border-[#e1e9e3] bg-white"
+                className="service-card group flex h-full min-h-[245px] flex-col overflow-hidden rounded-[1.6rem] border border-[#e1e9e3] bg-white"
                 href={`/services#${service.id}`}
-                key={service.title}
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
@@ -189,6 +190,7 @@ export default function Home() {
                 </p>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
           <div className="mt-8 text-center">
