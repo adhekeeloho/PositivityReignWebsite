@@ -25,7 +25,9 @@ export default function SiteHeader() {
           href="/"
           onClick={() => setMenuOpen(false)}
         >
-          <SiteLogo className="h-[72px] w-auto shrink-0" />
+          <span className="block h-[66px] overflow-hidden sm:h-[72px]">
+            <SiteLogo className="h-[76px] w-auto max-w-none shrink-0 sm:h-[72px]" />
+          </span>
         </Link>
 
         <button
