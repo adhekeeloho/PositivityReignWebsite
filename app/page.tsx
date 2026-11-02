@@ -116,13 +116,13 @@ export default function Home() {
                   src="/images/hero-calm.jpg"
                 />
               </div>
-              <div className="absolute bottom-[12%] right-[4%] z-20 max-w-[205px] rounded-2xl border border-white/80 bg-white/90 p-4 shadow-[0_15px_36px_rgba(23,75,82,0.1)] backdrop-blur">
+              <div className="absolute -bottom-2 right-0 z-20 max-w-[190px] sm:bottom-[12%] sm:right-[4%] sm:max-w-[205px] rounded-2xl border border-white/80 bg-white/90 p-4 shadow-[0_15px_36px_rgba(23,75,82,0.1)] backdrop-blur">
                 <span className="mb-2 block h-1 w-8 rounded-full bg-brand-green" />
                 <p className="font-serif text-lg leading-6 text-[#183a43]">
                   Transforming lives, elevating societies.
                 </p>
               </div>
-              <div className="absolute left-[1%] top-[64%] z-20 rounded-full border border-[#dfe8df] bg-white/90 px-4 py-2 text-xs font-semibold tracking-wide text-[#397348] shadow-sm">
+              <div className="absolute left-[1%] top-[64%] z-20 hidden rounded-full border sm:block border-[#dfe8df] bg-white/90 px-4 py-2 text-xs font-semibold tracking-wide text-[#397348] shadow-sm">
                 A little more room to grow
               </div>
             </div>

@@ -21,6 +21,10 @@ export default function Reveal({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      const frame = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(frame);
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
