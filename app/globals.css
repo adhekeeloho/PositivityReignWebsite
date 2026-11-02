@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8faf8;
+  --foreground: #183a43;
+  --blue: #1580ac;
+  --green: #9cc55f;
+  --muted: #587078;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-blue: var(--blue);
+  --color-brand-green: var(--green);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #dcebc5;
+  color: #183a43;
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+.page-shell {
+  overflow: hidden;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: #397348;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 1.5rem;
+  height: 1px;
+  background: var(--green);
+  content: "";
+}
+
+.display-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.03;
+}
+
+.hero-orbit {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid rgb(21 128 172 / 13%);
+  border-radius: 9999px;
+  transform: rotate(-24deg);
+}
+
+.hero-orbit::before,
+.hero-orbit::after {
+  position: absolute;
+  border: 1px solid rgb(156 197 95 / 32%);
+  border-radius: 9999px;
+  content: "";
+}
+
+.hero-orbit::before {
+  inset: 9%;
+}
+
+.hero-orbit::after {
+  inset: 19%;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 17%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(156 197 95 / 24%), transparent 68%);
+  filter: blur(2px);
+}
+
+.hero-logo-card {
+  box-shadow: 0 32px 80px rgb(23 75 82 / 12%), 0 4px 12px rgb(23 75 82 / 5%);
+}
+
+.service-card {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(21 128 172 / 32%);
+  box-shadow: 0 22px 48px rgb(24 58 67 / 9%);
+}
+
+.soft-grid {
+  background-image: radial-gradient(rgb(21 128 172 / 10%) 0.8px, transparent 0.8px);
+  background-size: 18px 18px;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0.75rem;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
